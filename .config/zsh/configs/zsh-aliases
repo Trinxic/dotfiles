@@ -1,0 +1,33 @@
+# pacman
+alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
+alias pss='pacman -Ss'  # list available packages
+alias sps='sudo pacman -S'  # install package
+alias spr='sudo pacman -R'  # remove package
+alias sprs='sudo pacman -Rs'  # remove package and (unused) dependencies
+
+# apps
+alias code='codium'
+alias nim="nvim"
+alias neofetch='fastfetch'
+alias fetch='fastfetch'
+
+# changing dicrectories
+alias cd..='cd ..'
+alias z..='z ..'
+
+# other
+alias srce='source ~/.zshrc'  # reload zsh configs
+alias ls='ls --color=auto'
+alias la='ls -la --color=auto'  # list files + additional info
+alias lsa='ls -la --color=auto'  # alternative alias
+alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
+
+# colorize grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# overwrite confirmation
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'

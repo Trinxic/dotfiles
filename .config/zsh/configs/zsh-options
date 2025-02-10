@@ -1,0 +1,18 @@
+# ------------------ Lines configured by zsh-newuser-install ----------------- #
+HISTFILE=~/dotfiles/.config/zsh/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt extendedglob nomatch notify
+unsetopt autocd beep
+bindkey -e
+
+# ------------- The following lines were confiured by compinstall ------------ #
+zstyle :compinstall filename '/home/david/.zshrc'
+autoload -Uz compinit
+compinit
+
+# --------------------------------- My Lines --------------------------------- #
+setopt globdots  # show dotfiles in autocomplete
+setopt PROMPT_SUBST  # allows for functions as part of prompt
+zstyle ':completion:*' menu select  # x2 `tab` to use arrow keys
+zle_highlight=('paste:none')

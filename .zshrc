@@ -1,5 +1,5 @@
 # -------- Imports -------- #
-source ~/dotfiles/zsh/zsh-functions  # custom functions
+source ~/dotfiles/.config/zsh/zsh-functions  # custom functions
 
 zsh_add_config 'zsh-options'
 zsh_add_config 'zsh-exports'

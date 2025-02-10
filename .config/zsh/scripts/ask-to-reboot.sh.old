@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# defaults
+timeout=30
+default_answer="y"
+answer=""
+
+# Countdown loop
+for ((i=timeout; i>0; i--)); do
+    echo -ne "\rDo you want to continue? [$i] (Y/n): "
+    read -t 1 -n 1 answer
+    if [[ -n "$answer" ]]; then
+        break  # Exit loop if input is detected
+    fi
+done
+
+# Move to a new line to avoid overlap
+echo
+
+# Use default answer if no input was given
+answer=${answer:-$default_answer}
+
+case $answer in
+    [Yy]* | "" ) ;;  # if <Enter> or "Y" or "y"
+    * ) echo "Ok, goodbye." && exit;;  # if "N" or "n", exit the script
+esac
+
+echo "Rebooting..."
