@@ -22,4 +22,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
+^/\.config/zsh(/|$)
 # note: thought i'd need to add `\.gitmodules` but it's already here
+# ^\/.config\/zsh(\/*|$)
