@@ -22,6 +22,5 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-^/\.config/zsh(/|$)
-^/\.config/firefox(/|$)
+^/setup-firefox-profile.sh
 # note: thought i'd need to add `\.gitmodules` but it's already here
