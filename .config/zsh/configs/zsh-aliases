@@ -8,6 +8,7 @@ alias sprs='sudo pacman -Rs'  # remove package and (unused) dependencies
 # apps
 alias code='codium'
 alias nim="nvim"
+alias snim='sudo nvim'  # lol
 alias neofetch='fastfetch'
 alias fetch='fastfetch'
 
