@@ -13,7 +13,7 @@ vim.g.have_nerd_font = true
 -- [[ Sourced Config Files ]]
 
 -- found in ../nvim/lua/
--- require 'configs.options'      -- `vim.opt.*`
+require 'configs.options'      -- `vim.opt.*`
 require 'configs.keymaps'      -- `vim.keymap.set(*)  -- sets the leader key
 require 'configs.autocommands' -- vim.api.nvim_create_autocmd(*)
 
@@ -50,6 +50,7 @@ require('lazy').setup {
   require 'plugins.alpha',
   require 'plugins.indent-blankline',
   require 'plugins.misc',
+  require 'plugins.comment',
   -- require 'plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }

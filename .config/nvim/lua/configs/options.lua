@@ -62,7 +62,9 @@ vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  NOTE: this wasn't working with vim.schedule()
-vim.opt.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- [[ Other Options ]]
 vim.opt.mouse = 'a'          -- Enable mouse mode, can be useful for resizing splits for example!
