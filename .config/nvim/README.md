@@ -31,3 +31,5 @@ To check list of runtime paths (from within nvim):
 To add a path:
 `lua vim.opt.runtimepath:append(',<path/to/lua>/lua')`
 
+#### Pressed Ctrl+z
+Pressing `<C-z>` will suspend nvim in the terminal. Enter the command: `fg` to retreive it.
