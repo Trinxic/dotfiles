@@ -24,4 +24,5 @@ _darcs
 
 ^/\.config/zsh(/|$)
 ^/\.config/firefox(/|$)
+^/\discord(/|$)
 # note: thought i'd need to add `\.gitmodules` but it's already here
