@@ -20,4 +20,7 @@ return {
       require('colorizer').setup()
     end,
   },
+  { -- game(s) to learn the basics of vim-motions
+    'ThePrimeagen/vim-be-good',
+  },
 }

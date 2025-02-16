@@ -1,5 +1,13 @@
 # Dotfiles - [Trinxic](https://github.com/Trinxic/dotfiles)
 
+## TODO
+- sddm(?)
+- hyprlock?
+- thunar
+- fastfetch
+- wofi
+- *any others i decide to add... (check out `~/.config/` for ideas)
+
 ## [Stow](https://www.gnu.org/software/stow)
 
 #### What Is It
@@ -50,7 +58,12 @@ waybar      # status bar
 ```
 git clone https://github.com/Trinxic/dotfiles ~/dotfiles
 z dotfiles  # move into the newly created directory
-chmod +x setup.sh  # allow `setup.sh` to be executed
-./ setup.sh  # run the setup script
-```
 
+```
+### Sym-Linking Everything
+The following script will ensure that only OS-related dotfiles will be symlinked.
+Please do not delete the other files (or at least don't push to the repo if you do)
+```
+chmod +x setup.sh  # allow `setup.sh` to be executed
+./setup.sh         # run the setup script
+```

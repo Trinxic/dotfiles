@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing scripts (or manually list them)
-SCRIPT_DIR="$HOME/dotfiles/stownt/.setup"
+SCRIPT_DIR="$HOME/dotfiles/stownt/setup"
 SCRIPTS=("$SCRIPT_DIR"/*.sh) # Adjust pattern as needed
 
 # Check if scripts exist
@@ -17,12 +17,10 @@ done
 
 # Execute scripts and handle failures
 for script in "${SCRIPTS[@]}"; do
-    echo "Running $script..."
-    "$script"
-    if [ $? -ne 0 ]; then
-        echo "Error: $script failed!"
-    fi
+    echo "$script"
+    #if [ $? -ne 0 ]; then
+    #    echo "Error: $script failed!"
+    #fi
 done
 
-# LAST STEP
-# stow .  # uncomment this when ready
+echo "All scripts attempted."

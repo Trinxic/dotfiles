@@ -1,0 +1,4 @@
+For files that mac should ignore, prefix with mac. linux otherwise.
+
+mac: ^/\.config/hypr(/|$)
+linux: 

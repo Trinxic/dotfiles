@@ -33,3 +33,8 @@ To add a path:
 
 #### Pressed Ctrl+z
 Pressing `<C-z>` will suspend nvim in the terminal. Enter the command: `fg` to retreive it.
+
+
+## Learning Vim-Motions
+1. `:Tutor`: A verbose file which teaches you the basics of vim and vim-motions
+2. `ThePrimeagen/vim-be-good`: A plugin which creates a game-like environment to practice most of said the basics

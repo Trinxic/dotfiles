@@ -1,4 +1,4 @@
-# Comments and blank lines are allowed.
+# --- Default --- #
 
 RCS
 .+,v
@@ -22,7 +22,12 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-^/\.config/zsh(/|$)
-^/\.config/firefox(/|$)
-^/\discord(/|$)
-# note: thought i'd need to add `\.gitmodules` but it's already here
+
+# --- Added --- #
+
+^/setup.sh
+^/test.sh
+^/\stownt(/|$)
+
+
+# --- Ignore Script --- #

@@ -37,22 +37,22 @@ vim.opt.rtp:prepend(lazypath)
 --  To check the current status of your plugins, run `:Lazy`
 --  To update plugins you can run `:Lazy update`
 require('lazy').setup {
-  require 'plugins.tokyo-night',
-  require 'plugins.which-key',
-  require 'plugins.gitsigns',
-  require 'plugins.neo-tree',
-  require 'plugins.treesitter',
-  require 'plugins.telescope',
-  require 'plugins.lazydev',
-  require 'plugins.lsp', -- make sure this is after `telescope`
-  require 'plugins.autocompletion',
-  require 'plugins.autoformatting',
-  require 'plugins.alpha',
-  require 'plugins.indent-blankline',
-  require 'plugins.misc',
-  require 'plugins.comment',
+  require 'plugins.tokyo-night',       -- colorscheme
+  require 'plugins.which-key',         -- displays available keymaps/commands while 'motioning'
+  require 'plugins.gitsigns',          -- for git related presentation
+  require 'plugins.neo-tree',          -- file browser
+  require 'plugins.treesitter',        -- connects everything (ya, idk a good definition)
+  require 'plugins.telescope',         -- search almost anything
+  require 'plugins.lazydev',           -- *I don't remember*
+  require 'plugins.lsp',               -- advanced keyword recognition / highlighting | make sure this is after `telescope`
+  require 'plugins.autocompletion',    -- auto-completion
+  require 'plugins.autoformatting',    -- auto-formatting
+  require 'plugins.alpha',             -- *I don't remember*
+  require 'plugins.indent-blankline',  -- creates vertical bars to visualize indents
+  require 'plugins.misc',              -- set of additional plugins small enough to fit in one file
+  require 'plugins.comment',           -- better commenting motions
   -- require 'plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }
 
--- vim.cmd[[colorscheme tokyonight]]  -- Must be loaded AFTER setting Lazy configurations (hence why it's down here)
+-- NOTE: Disable autoformatting per-save using the command: `:noa w`
