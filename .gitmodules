@@ -10,3 +10,6 @@
 [submodule ".config/zsh/plugins/zsh-you-should-use"]
 	path = .config/zsh/plugins/zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
+[submodule "/Users/d.anderson/dotfiles/.config/zsh/plugins/powerlevel10k"]
+	path = /Users/d.anderson/dotfiles/.config/zsh/plugins/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
