@@ -2,11 +2,11 @@
 
 ## TODO
 - sddm(?)
-- hyprlock?
 - thunar
 - fastfetch
 - wofi
 - *any others i decide to add... (check out `~/.config/` for ideas)
+- add scripts for installing dependencies (apps)
 
 ## [Stow](https://www.gnu.org/software/stow)
 
@@ -40,10 +40,10 @@ fzf         # shell fuzzy finder
 zoxide      # improved 'cd'
 stow        # see above
 firefox     # ...
-fastfetch   # preview specs and OS image
+fastfetch   # preview specs and OS icon
 
 # MacOS
-brew        # package manager
+homebrew        # package manager
 
 # Linux
 sddm        # login manager (there's a different name for it)
@@ -55,15 +55,19 @@ waybar      # status bar
 
 ## Setup
 ### Creating The `dotfiles` Directory
+Since this repo includes other repos for things like zsh plugins, you must
+use the `--recurse-submodules` tag when cloning.
 ```
-git clone https://github.com/Trinxic/dotfiles ~/dotfiles
-z dotfiles  # move into the newly created directory
+git clone --recurse-submodules https://github.com/Trinxic/dotfiles ~/dotfiles
+cd dotfiles  # move into the newly created directory
+```
+If you have already cloned the repo, you can use
+`git submodule update --init --recursive`
 
-```
 ### Sym-Linking Everything
 The following script will ensure that only OS-related dotfiles will be symlinked.
 Please do not delete the other files (or at least don't push to the repo if you do)
 ```
-chmod +x setup.sh  # allow `setup.sh` to be executed
-./setup.sh         # run the setup script
+chmod +x ~/dotfiles/setup.sh  # allow `setup.sh` to be executed
+~/dotfiles/setup.sh           # run the setup script
 ```
