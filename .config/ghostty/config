@@ -30,8 +30,14 @@ keybind = cmd+w=close_surface
 
 # Theme
 theme = tokyonight
-macos-icon = holographic
-# blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray
+
+# Icon
+# blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray or custom-style
+macos-icon = chalkboard
+# macos-icon-frame = beige
+# macos-icon-ghost-color = FFFFFF
+# macos-icon-screen-color = 000000
+
 
 # Cursor
 cursor-style-blink = true
