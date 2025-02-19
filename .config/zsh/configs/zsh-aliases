@@ -23,6 +23,7 @@ alias ls='ls --color=auto'
 alias la='ls -la --color=auto'  # list files + additional info
 alias lsa='ls -la --color=auto'  # alternative alias
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
+alias exti='exit'  # correct misspelling
 
 # colorize grep
 alias grep='grep --color=auto'
