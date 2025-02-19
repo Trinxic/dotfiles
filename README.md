@@ -1,9 +1,8 @@
-# Dotfiles - [Trinxic](https://github.com/Trinxic/dotfiles)
+# [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
 ## TODO
 - sddm(?)
 - thunar
-- fastfetch
 - wofi
 - *any others i decide to add... (check out `~/.config/` for ideas)
 - add scripts for installing dependencies (apps)
