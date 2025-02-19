@@ -2,7 +2,7 @@
 
 # Directory containing scripts (or manually list them)
 SCRIPT_DIR="$HOME/dotfiles/stownt/.setup"
-SCRIPTS=("$SCRIPT_DIR"/*.sh) # Adjust pattern as needed
+SCRIPTS=("$SCRIPT_DIR"/*.sh)
 
 # Check if scripts exist
 if [ ! -d "$SCRIPT_DIR" ] || [ ${#SCRIPTS[@]} -eq 0 ]; then

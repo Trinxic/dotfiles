@@ -12,6 +12,7 @@ autoload -Uz compinit
 compinit
 
 # --------------------------------- My Lines --------------------------------- #
+setopt HIST_IGNORE_DUPS
 setopt globdots  # show dotfiles in autocomplete
 setopt PROMPT_SUBST  # allows for functions as part of prompt
 zstyle ':completion:*' menu select  # x2 `tab` to use arrow keys

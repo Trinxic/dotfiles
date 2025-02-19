@@ -8,7 +8,8 @@
 
 # Window
 window-save-state = default
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
+window-decoration = auto
 macos-non-native-fullscreen = visible-menu
 background-opacity = 0.9
 background-blur = 10
@@ -29,6 +30,8 @@ keybind = cmd+w=close_surface
 
 # Theme
 theme = tokyonight
+macos-icon = holographic
+# blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray
 
 # Cursor
 cursor-style-blink = true
@@ -36,5 +39,3 @@ mouse-hide-while-typing = true
 macos-secure-input-indication = true
 
 # Other
-macos-icon = holographic
-# blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray

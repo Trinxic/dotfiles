@@ -11,6 +11,7 @@ alias nim="nvim"
 alias snim='sudo nvim'  # lol
 alias neofetch='fastfetch'
 alias fetch='fastfetch'
+alias stow='stow --verbose'
 
 # changing dicrectories
 alias cd..='cd ..'

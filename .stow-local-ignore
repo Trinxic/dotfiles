@@ -1,5 +1,4 @@
 # --- Default --- #
-
 RCS
 .+,v
 
@@ -24,10 +23,11 @@ _darcs
 
 
 # --- Added --- #
-
 ^/setup.sh
-^/test.sh
-^/\stownt(/|$)
+^/stownt(/|$)
 
 
 # --- Ignore Script --- #
+^/\.config/Thunar(/|$)
+^/\.config/hypr(/|$)
+^/\.config/kitty(/|$)

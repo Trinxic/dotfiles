@@ -1,0 +1,13 @@
+// This file includes any/all places to ignore when using `Stow`
+// All items in the list will be appended to `~/dotfiles/.stow-local-ignore`
+// NOTE: no comma on the last item in a list, etc.
+{
+    "mac": [  // Add directories/files you want to ignore on mac
+        "^/\.config/Thunar(/|$)",
+        "^/\.config/hypr(/|$)",
+        "^/\.config/kitty(/|$)"
+    ],
+    "linux": [  // Add directories/files you want to ignore on linux
+        "^/\.config/ghostty(/|$)"
+    ]
+}
