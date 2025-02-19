@@ -25,6 +25,7 @@ _darcs
 # --- Added --- #
 ^/setup.sh
 ^/stownt(/|$)
+^/TODO.*
 
 
 # --- Ignore Script --- #
