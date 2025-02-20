@@ -1,12 +1,5 @@
 # [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
-## TODO
-- sddm(?)
-- thunar
-- wofi
-- *any others i decide to add... (check out `~/.config/` for ideas)
-- add scripts for installing dependencies (apps)
-
 ## [Stow](https://www.gnu.org/software/stow)
 
 #### What Is It
