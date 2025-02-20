@@ -26,23 +26,23 @@ pacman -S <package>
 ### Dependencies
 Make sure you have all the necessary dependencies:
 ```
-# Universal
+# Linux
 zsh         # shell
 fzf         # shell fuzzy finder
 zoxide      # improved 'cd'
 stow        # see above
 firefox     # ...
 fastfetch   # preview specs and OS icon
-
-# MacOS
-homebrew        # package manager
-
-# Linux
 sddm        # login manager (there's a different name for it)
 hypr(land)  # wayland version
 kitty       # terminal emulator
 wofi        # wayland version of rofi
 waybar      # status bar
+
+# MacOS
+# The setup script will install brew & other apps automatically.
+# To see said apps, check out:
+~/dotfiles/stownt/.setup/Brewfile
 ```
 
 ## Setup
@@ -50,10 +50,10 @@ waybar      # status bar
 Since this repo includes other repos for things like zsh plugins, you must
 use the `--recurse-submodules` tag when cloning.
 ```
-git clone --recurse-submodules https://github.com/Trinxic/dotfiles ~/dotfiles
+git clone --recurse-submodules git@github.com:Trinxic/dotfiles ~/dotfiles
 cd dotfiles  # move into the newly created directory
 ```
-If you have already cloned the repo, you can use
+If you have already cloned the repo, you can use: 
 `git submodule update --init --recursive`
 
 ### Sym-Linking Everything
