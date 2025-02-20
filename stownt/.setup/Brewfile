@@ -1,0 +1,41 @@
+# Required to install bundles:
+tap "homebrew/bundle"
+
+# Miscellaneous
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
+brew "qmk/qmk/qmk"
+brew "wget"
+# cask "xquartz"
+
+# System/Terminal
+cask "font-geist-mono-nerd-font"
+cask "ghostty"
+brew "stow"
+brew "zoxide"
+brew "fzf"
+brew "git"
+brew "fastfetch"
+brew "neovim"
+
+# Utilities
+cask "appcleaner"
+cask "raycast"
+cask "cheatsheet"
+cask "hiddenbar"
+cask "topnotch"
+cask "keka"
+cask "the-unarchiver"
+
+# Major Apps
+cask "arc"
+cask "autodesk-fusion"
+cask "discord"
+cask "fl-studio"
+cask "prusaslicer"
+cask "qmk-toolbox"
+cask "steam"
+cask "tor-browser"
+cask "vscodium"
+cask "zoom"

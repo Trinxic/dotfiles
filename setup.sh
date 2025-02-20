@@ -25,4 +25,6 @@ for script in "${SCRIPTS[@]}"; do
 done
 
 # LAST STEP
-# stow .  # uncomment this when ready
+cd $HOME/dotfiles # ensure pwd is ~/dotfiles
+stow -D .         # remove symlinks
+stow .            # re-apply symlinks
