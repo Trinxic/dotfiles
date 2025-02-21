@@ -2,7 +2,7 @@
 
 return {
   'hrsh7th/nvim-cmp',
-  event = 'InsertEnter',  -- having issues? maybe comment this out
+  event = 'InsertEnter', -- having issues? maybe comment this out
   dependencies = {
     -- Snippet Engine & its associated nvim-cmp source
     {
@@ -40,6 +40,8 @@ return {
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    -- Load custom LuaSnip snippets
+    require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/snippets' } }
     luasnip.config.setup {}
 
     local kind_icons = {
