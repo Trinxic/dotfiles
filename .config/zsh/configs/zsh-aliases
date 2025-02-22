@@ -13,17 +13,26 @@ alias neofetch='fastfetch'
 alias fetch='fastfetch'
 alias stow='stow --verbose'
 
-# changing dicrectories
+# navigating dicrectories
 alias cd..='cd ..'
+alias cd...='cd ../..'
 alias z..='z ..'
+alias z...='z ../..'
 
 # other
+alias exti='exit'  # correct misspelling
 alias srce='source ~/.zshrc'  # reload zsh configs
 alias ls='ls --color=auto'
 alias la='ls -la --color=auto'  # list files + additional info
 alias lsa='ls -la --color=auto'  # alternative alias
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
-alias exti='exit'  # correct misspelling
+mktouch() {
+  local dir
+  dir="${1%/*}"
+  mkdir -p "$dir" && touch "$1"
+}  # creates file and necessary director(y/ies)
+
+
 
 # colorize grep
 alias grep='grep --color=auto'
