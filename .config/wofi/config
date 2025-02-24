@@ -1,0 +1,17 @@
+style=$HOME/.config/wofi/style.css
+
+mode=drun
+show=drun
+
+allow_images=true
+image_size=18
+
+width=500
+height=500
+
+always_parse_args=true
+insensitive=true
+layer=overlay
+print_command=true
+prompt=
+show_all=true

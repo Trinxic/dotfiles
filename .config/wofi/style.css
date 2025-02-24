@@ -1,0 +1,63 @@
+@define-color bg #24283b;
+@define-color fg  #c0caf5;
+/*
+:root {
+    --bg: #ff0000;
+    --fg: "green";
+}
+var(--bg)
+*/
+
+
+window {
+    margin: 10px;  // ???
+    border: 5px solid #414868;
+    border-radius: 0px;
+    font-family: GeistMono Nerd Font Mono; // monospace;
+    font-size: 14px;
+    background-color: @bg;
+}
+
+#input {
+    margin: 5px;
+    color: @fg;
+    border: 1px solid @bg;
+    background-color: @bg;
+}
+
+#input image {
+    color: @fg;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: @bg;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: @bg;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: @fg;
+} 
+
+#entry:selected {
+    background-color: #414868;
+    font-weight: normal;
+}
+
+#text:selected {
+    background-color: #414868;
+    font-weight: normal;
+}
