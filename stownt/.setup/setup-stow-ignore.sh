@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# Detect OS
+# Detect kernal
 if [[ "$(uname)" == "Darwin" ]]; then
     OS="mac"
 elif [[ "$(uname)" == "Linux" ]]; then
     OS="linux"
 else
-    echo "Unsupported OS"
+    echo "Unsupported OS..."
     exit 1
 fi
 
 # Input and output files
-INPUT_FILE="$HOME/dotfiles/.stow-local-ignore"           # Adjust as needed
-OUTPUT_FILE="$HOME/dotfiles/stownt/.setup/os-ignore.txt" # Adjust as needed
+DOT_DIR="$HOME/dotfiles"
+INPUT_FILE="$DOT_DIR/stownt/.setup/os-ignore.jsonc"
+OUTPUT_FILE="$DOT_DIR/.stow-local-ignore"
 
 # Check if input file exists
 if [[ ! -f "$INPUT_FILE" ]]; then
@@ -20,8 +21,11 @@ if [[ ! -f "$INPUT_FILE" ]]; then
     exit 1
 fi
 
-# Extract lines based on OS
-LINES_TO_APPEND=$(grep "^$OS:" "$INPUT_FILE" | cut -d':' -f2-)
+# Remove comments from the JSONC file before passing it to jq
+CLEANED_JSON=$(sed 's/\(.*\)\s*\/\/.*$/\1/' "$INPUT_FILE" | sed 's/\\/\\\\/g' | jq .)
+
+# Extract lines based on OS from the cleaned JSON
+LINES_TO_APPEND=$(echo "$CLEANED_JSON" | jq -r --arg os "$OS" '.[$os] | .[]')
 
 # Check if lines were found
 if [[ -z "$LINES_TO_APPEND" ]]; then
@@ -29,16 +33,18 @@ if [[ -z "$LINES_TO_APPEND" ]]; then
     exit 1
 fi
 
-# Append lines after "# ignore:" in the output file
-if grep -q "# ignore:" "$OUTPUT_FILE"; then
-    # Insert after the first occurrence of "# ignore:"
-    sed -i "/# ignore:/a\\
-$LINES_TO_APPEND" "$OUTPUT_FILE"
-else
-    echo "# ignore:" >>"$OUTPUT_FILE"
-    echo "$LINES_TO_APPEND" >>"$OUTPUT_FILE"
+# Initialize a marker to search for within $OUTPUT_FILE
+HEADER="# --- Ignore Script --- #"
+
+# Delete everything from "$HEADER" onward if it exists
+if grep -q "$HEADER" "$OUTPUT_FILE"; then
+    sed -i '' -e "/$HEADER/,\$d" "$OUTPUT_FILE"
 fi
 
-echo "Lines added to $OUTPUT_FILE."
+# Append the ignore script header and new lines
+{
+    echo "$HEADER"
+    echo "$LINES_TO_APPEND"
+} >>"$OUTPUT_FILE"
 
-"# --- Ignore Script --- #"
+echo "Updated $OUTPUT_FILE with new ignore patterns."

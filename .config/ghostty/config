@@ -1,0 +1,47 @@
+#    ________               __  __       
+#   / ____/ /_  ____  _____/ /_/ /___  __
+#  / / __/ __ \/ __ \/ ___/ __/ __/ / / /
+# / /_/ / / / / /_/ (__  ) /_/ /_/ /_/ / 
+# \____/_/ /_/\____/____/\__/\__/\__, /  
+#                               /____/   
+# https://ghostty.org/docs/config/reference#font-variation
+
+# Window
+window-save-state = default
+macos-titlebar-style = tabs
+window-decoration = auto
+macos-non-native-fullscreen = visible-menu
+background-opacity = 0.9
+background-blur = 10
+unfocused-split-opacity = 0.85
+title = "Ghostty"
+# window-inherit-working-directory = true
+focus-follows-mouse = true
+quit-after-last-window-closed = true
+
+# Font
+font-family = "GeistMono Nerd Font"
+font-size = 18
+window-title-font-family = "GeistMono Nerd Font"
+
+# Keybinds
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+
+# Theme
+theme = tokyonight
+
+# Icon
+# blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray or custom-style
+macos-icon = chalkboard
+# macos-icon-frame = beige
+# macos-icon-ghost-color = FFFFFF
+# macos-icon-screen-color = 000000
+
+
+# Cursor
+cursor-style-blink = true
+mouse-hide-while-typing = true
+macos-secure-input-indication = true
+
+# Other

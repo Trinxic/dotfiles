@@ -37,20 +37,20 @@ vim.opt.rtp:prepend(lazypath)
 --  To check the current status of your plugins, run `:Lazy`
 --  To update plugins you can run `:Lazy update`
 require('lazy').setup {
-  require 'plugins.tokyo-night',       -- colorscheme
-  require 'plugins.which-key',         -- displays available keymaps/commands while 'motioning'
-  require 'plugins.gitsigns',          -- for git related presentation
-  require 'plugins.neo-tree',          -- file browser
-  require 'plugins.treesitter',        -- connects everything (ya, idk a good definition)
-  require 'plugins.telescope',         -- search almost anything
-  require 'plugins.lazydev',           -- *I don't remember*
-  require 'plugins.lsp',               -- advanced keyword recognition / highlighting | make sure this is after `telescope`
-  require 'plugins.autocompletion',    -- auto-completion
-  require 'plugins.autoformatting',    -- auto-formatting
-  require 'plugins.alpha',             -- *I don't remember*
-  require 'plugins.indent-blankline',  -- creates vertical bars to visualize indents
-  require 'plugins.misc',              -- set of additional plugins small enough to fit in one file
-  require 'plugins.comment',           -- better commenting motions
+  require 'plugins.tokyo-night',      -- colorscheme
+  require 'plugins.which-key',        -- displays available keymaps/commands while 'motioning'
+  require 'plugins.gitsigns',         -- for git related presentation
+  require 'plugins.neo-tree',         -- file browser
+  require 'plugins.treesitter',       -- connects everything (ya, idk a good definition)
+  require 'plugins.telescope',        -- search almost anything
+  require 'plugins.lazydev',          -- *I don't remember*
+  require 'plugins.lsp',              -- advanced keyword recognition / highlighting | make sure this is after `telescope`
+  require 'plugins.autocompletion',   -- auto-completion (includes luasnip)
+  require 'plugins.autoformatting',   -- auto-formatting
+  require 'plugins.alpha',            -- *I don't remember*
+  require 'plugins.indent-blankline', -- creates vertical bars to visualize indents
+  require 'plugins.misc',             -- set of additional plugins small enough to fit in one file
+  require 'plugins.comment',          -- better commenting motions
   -- require 'plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }

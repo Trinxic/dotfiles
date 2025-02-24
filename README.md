@@ -1,12 +1,4 @@
-# Dotfiles - [Trinxic](https://github.com/Trinxic/dotfiles)
-
-## TODO
-- sddm(?)
-- hyprlock?
-- thunar
-- fastfetch
-- wofi
-- *any others i decide to add... (check out `~/.config/` for ideas)
+# [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
 ## [Stow](https://www.gnu.org/software/stow)
 
@@ -34,36 +26,40 @@ pacman -S <package>
 ### Dependencies
 Make sure you have all the necessary dependencies:
 ```
-# Universal
+# Linux
 zsh         # shell
 fzf         # shell fuzzy finder
 zoxide      # improved 'cd'
 stow        # see above
 firefox     # ...
-fastfetch   # preview specs and OS image
-
-# MacOS
-brew        # package manager
-
-# Linux
+fastfetch   # preview specs and OS icon
 sddm        # login manager (there's a different name for it)
 hypr(land)  # wayland version
 kitty       # terminal emulator
 wofi        # wayland version of rofi
 waybar      # status bar
+
+# MacOS
+# The setup script will install brew & other apps automatically.
+# To see said apps, check out:
+~/dotfiles/stownt/.setup/Brewfile
 ```
 
 ## Setup
 ### Creating The `dotfiles` Directory
+Since this repo includes other repos for things like zsh plugins, you must
+use the `--recurse-submodules` tag when cloning.
 ```
-git clone https://github.com/Trinxic/dotfiles ~/dotfiles
-z dotfiles  # move into the newly created directory
+git clone --recurse-submodules git@github.com:Trinxic/dotfiles ~/dotfiles
+cd dotfiles  # move into the newly created directory
+```
+If you have already cloned the repo, you can use: 
+`git submodule update --init --recursive`
 
-```
 ### Sym-Linking Everything
 The following script will ensure that only OS-related dotfiles will be symlinked.
 Please do not delete the other files (or at least don't push to the repo if you do)
 ```
-chmod +x setup.sh  # allow `setup.sh` to be executed
-./setup.sh         # run the setup script
+chmod +x ~/dotfiles/setup.sh  # allow `setup.sh` to be executed
+~/dotfiles/setup.sh           # run the setup script
 ```
