@@ -29,6 +29,4 @@ _darcs
 
 
 # --- Ignore Script --- #
-^/\.config/Thunar(/|$)
-^/\.config/hypr(/|$)
-^/\.config/kitty(/|$)
+^/\.config/ghostty(/|$)
