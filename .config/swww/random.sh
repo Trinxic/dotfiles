@@ -6,7 +6,7 @@
 WALLPAPER_DIR="$HOME/dotfiles/stownt/photos/wallpapers"
 
 # -- Get Random Wallpaper -- #
-max=$(ls WALLPAPER_DIR | wc -l)
+max=$(ls $WALLPAPER_DIR | wc -l)
 min=1
 if [ $max -gt 0 ]; then
     # assumes all wallpapers are consecutively named
@@ -15,6 +15,8 @@ if [ $max -gt 0 ]; then
 fi
 
 WALLPAPER="$WALLPAPER_DIR/wallpaper-$n.jpg"
+
+echo "$WALLPAPER"
 
 # ------ Set Wallpaper(s) ----- #
 swww img $WALLPAPER --outputs=DP-1 --transition-type=random
