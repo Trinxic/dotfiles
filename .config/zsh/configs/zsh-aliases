@@ -23,8 +23,8 @@ alias z...='z ../..'
 alias exti='exit'  # correct misspelling
 alias srce='source ~/.zshrc'  # reload zsh configs
 alias ls='ls --color=auto'
-alias la='ls -la --color=auto'  # list files + additional info
-alias lsa='ls -la --color=auto'  # alternative alias
+alias la='eza --long --time-style=relative --total-size --no-permissions --no-user --all --group-directories-first --icons=always'
+alias lap='eza --long --time-style=long-iso --total-size --all --group-directories-first --icons=always'
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
 mktouch() {
   local dir
