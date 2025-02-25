@@ -51,6 +51,7 @@ require('lazy').setup {
   require 'plugins.indent-blankline', -- creates vertical bars to visualize indents
   require 'plugins.misc',             -- set of additional plugins small enough to fit in one file
   require 'plugins.comment',          -- better commenting motions
+  require 'plugins.leetcode',         -- Leetcode
   -- require 'plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }
