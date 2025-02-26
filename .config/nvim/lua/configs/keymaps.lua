@@ -10,16 +10,14 @@
 --  See `:help vim.keymap.set()`
 --  See `:help keycodes`
 
-
 -- TODO: maybe move these around / organize
-
 
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' ' -- Set <space> as the leader key
 vim.g.maplocalleader = ' '
 
-local opts = { noremap = true }  -- could add `silent = true` which prevents keymap from showing in command line
+local opts = { noremap = true } -- could add `silent = true` which prevents keymap from showing in command line
 
 -- Disable <space> in normal and visual mode
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -77,3 +75,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'See all di
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+-- Saving/Quitting Files
+vim.keymap.set('n', '<leader>Ww', ':w<CR>', { desc = 'Write without quitting' })
+vim.keymap.set('n', '<leader>Wq', ':wq<CR>', { desc = 'Write and quit' })
+vim.keymap.set('n', '<leader>Wn', ':noautocmd w<CR>', { desc = 'Write without formatting' })
