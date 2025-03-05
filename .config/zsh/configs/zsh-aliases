@@ -10,8 +10,18 @@ alias code='codium'
 alias nim="nvim"
 alias snim='sudo nvim'  # lol
 alias neofetch='fastfetch'
-alias fetch='fastfetch'
+# alias fetch='fastfetch'
 alias stow='stow --verbose'
+fetch() {
+  if [[ "$(uname)" == "Linux" ]]; then
+    fastfetch --config ~/dotfiles/.config/fastfetch/linux-config.jsonc
+  elif [[ "$(uname)" == "Darwin" ]]; then
+    fastfetch --config ~/dotfiles/.config/fastfetch/macos-config.jsonc
+  else
+    echo "Unsupported OS..."
+    fastfetch
+  fi
+}
 
 # git
 alias gita='git add .'

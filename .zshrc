@@ -22,5 +22,5 @@ export PATH="$PATH:/home/david/.local/bin"
 
 # Auto-Launch fastfetch when openning terminal
 if [[ $- == *i* ]]; then
-    fastfetch
+    fetch
 fi
