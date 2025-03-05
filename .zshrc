@@ -19,3 +19,8 @@ eval "$(zoxide init zsh)"
 zsh_add_config 'zsh-prompt'
 # Created by `pipx` on 2025-02-08 23:09:19
 export PATH="$PATH:/home/david/.local/bin"
+
+# Auto-Launch fastfetch when openning terminal
+if [[ $- == *i* ]]; then
+    fastfetch
+fi

@@ -13,6 +13,11 @@ alias neofetch='fastfetch'
 alias fetch='fastfetch'
 alias stow='stow --verbose'
 
+# git
+alias gita='git add .'
+alias gitaa='git add . && git status'
+alias gits='git status'
+
 # navigating dicrectories
 alias cd..='cd ..'
 alias cd...='cd ../..'
