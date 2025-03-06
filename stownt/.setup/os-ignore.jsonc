@@ -10,6 +10,6 @@
         "^/\.config/wofi(/|$)"
     ],
     "linux": [  // Add directories/files you want to ignore on linux
-        "^/\.config/ghostty(/|$)"
+        // "^/\.config/ghostty(/|$)"
     ]
 }

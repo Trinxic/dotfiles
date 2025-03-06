@@ -1,12 +1,17 @@
 #!/bin/bash
 
+# Text Colors
+RED="\e[31m"
+GREEN="\e[32m"
+RESET="\e[0m"
+
 # Detect kernal
 if [[ "$(uname)" == "Darwin" ]]; then
     OS="mac"
 elif [[ "$(uname)" == "Linux" ]]; then
     OS="linux"
 else
-    echo "Unsupported OS..."
+    echo -e "${RED}Unsupported OS...${RESET}"
     exit 1
 fi
 
@@ -17,7 +22,7 @@ OUTPUT_FILE="$DOT_DIR/.stow-local-ignore"
 
 # Check if input file exists
 if [[ ! -f "$INPUT_FILE" ]]; then
-    echo "Error: $INPUT_FILE not found!"
+    echo -e "${RED}Error: $INPUT_FILE not found!${RESET}"
     exit 1
 fi
 
@@ -29,8 +34,8 @@ LINES_TO_APPEND=$(echo "$CLEANED_JSON" | jq -r --arg os "$OS" '.[$os] | .[]')
 
 # Check if lines were found
 if [[ -z "$LINES_TO_APPEND" ]]; then
-    echo "No lines found for $OS in $INPUT_FILE."
-    exit 1
+    echo -e "${RED}No lines found for $OS in ${INPUT_FILE}.${RESET}"
+    LINES_TO_APPEND=""
 fi
 
 # Initialize a marker to search for within $OUTPUT_FILE
@@ -38,7 +43,11 @@ HEADER="# --- Ignore Script --- #"
 
 # Delete everything from "$HEADER" onward if it exists
 if grep -q "$HEADER" "$OUTPUT_FILE"; then
-    sed -i '' -e "/$HEADER/,\$d" "$OUTPUT_FILE"
+    if [[ "$os" == "linux" ]]; then
+        sed -i -e "/$HEADER/,\$d" "$OUTPUT_FILE" # remove empty string arg on Linux
+    else
+        sed -i '' -e "/$HEADER/,\$d" "$OUTPUT_FILE" # keep it on MacOS
+    fi
 fi
 
 # Append the ignore script header and new lines
@@ -47,4 +56,4 @@ fi
     echo "$LINES_TO_APPEND"
 } >>"$OUTPUT_FILE"
 
-echo "Updated $OUTPUT_FILE with new ignore patterns."
+echo -e "${GREEN}Updated $OUTPUT_FILE with new ignore patterns.${RESET}"
