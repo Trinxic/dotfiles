@@ -36,6 +36,8 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and Install Plugins ]]
 --  To check the current status of your plugins, run `:Lazy`
 --  To update plugins you can run `:Lazy update`
+--  OPTIONALLY: just use `require('lazy').setup('plugins')`
+--              this will just `require` all files within `/plugins`
 require('lazy').setup {
   require 'plugins.tokyo-night',      -- colorscheme
   require 'plugins.which-key',        -- displays available keymaps/commands while 'motioning'
@@ -53,6 +55,7 @@ require('lazy').setup {
   require 'plugins.comment',          -- better commenting motions
   require 'plugins.leetcode',         -- Leetcode
   require 'plugins.jdtls',            -- used for proper java lsp, etc.
+  require 'plugins.floatty',          -- 'my own' floating terminal plugin
   -- require 'plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }
