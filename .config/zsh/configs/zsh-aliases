@@ -30,6 +30,7 @@ fetch() {
 alias gita='git add .'
 alias gitas='git add . && git status'
 alias gits='git status'
+alias gitm='git commit -m'
 alias gitp='git push'
 
 # navigating dicrectories
