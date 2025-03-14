@@ -13,8 +13,8 @@ vim.g.have_nerd_font = true
 -- [[ Sourced Config Files ]]
 
 -- found in ../nvim/lua/
-require 'configs.options'      -- `vim.opt.*`
-require 'configs.keymaps'      -- `vim.keymap.set(*)  -- sets the leader key
+require 'configs.options' -- `vim.opt.*`
+require 'configs.keymaps' -- `vim.keymap.set(*)  -- sets the leader key
 require 'configs.autocommands' -- vim.api.nvim_create_autocmd(*)
 
 -- [[ Other Settings ]]
@@ -39,24 +39,24 @@ vim.opt.rtp:prepend(lazypath)
 --  OPTIONALLY: just use `require('lazy').setup('plugins')`
 --              this will just `require` all files within `/plugins`
 require('lazy').setup {
-  require 'plugins.tokyo-night',      -- colorscheme
-  require 'plugins.which-key',        -- displays available keymaps/commands while 'motioning'
-  require 'plugins.gitsigns',         -- for git related presentation
-  require 'plugins.neo-tree',         -- file browser
-  require 'plugins.treesitter',       -- connects everything (ya, idk a good definition)
-  require 'plugins.telescope',        -- search almost anything
-  require 'plugins.lazydev',          -- *I don't remember*
-  require 'plugins.lsp',              -- advanced keyword recognition / highlighting | make sure this is after `telescope`
-  require 'plugins.autocompletion',   -- auto-completion (includes luasnip)
-  require 'plugins.autoformatting',   -- auto-formatting
-  require 'plugins.alpha',            -- *I don't remember*
-  require 'plugins.indent-blankline', -- creates vertical bars to visualize indents
-  require 'plugins.misc',             -- set of additional plugins small enough to fit in one file
-  require 'plugins.comment',          -- better commenting motions
-  require 'plugins.leetcode',         -- Leetcode
-  require 'plugins.jdtls',            -- used for proper java lsp, etc.
-  require 'plugins.floatty',          -- 'my own' floating terminal plugin
-  -- require 'plugins.bufferline',  -- not sure I'll be using this...
+  require 'config.plugins.tokyo-night', -- colorscheme
+  require 'config.plugins.which-key', -- displays available keymaps/commands while 'motioning'
+  require 'config.plugins.gitsigns', -- for git related presentation
+  require 'config.plugins.neo-tree', -- file browser
+  require 'config.plugins.treesitter', -- connects everything (ya, idk a good definition)
+  require 'config.plugins.telescope', -- search almost anything
+  require 'config.plugins.lazydev', -- *I don't remember*
+  require 'config.plugins.lsp', -- advanced keyword recognition / highlighting | make sure this is after `telescope`
+  require 'config.plugins.autocompletion', -- auto-completion (includes luasnip)
+  require 'config.plugins.autoformatting', -- auto-formatting
+  require 'config.plugins.alpha', -- *I don't remember*
+  require 'config.plugins.indent-blankline', -- creates vertical bars to visualize indents
+  require 'config.plugins.misc', -- set of additional plugins small enough to fit in one file
+  require 'config.plugins.comment', -- better commenting motions
+  require 'config.plugins.leetcode', -- Leetcode
+  require 'config.plugins.jdtls', -- used for proper java lsp, etc.
+  require 'config.plugins.floatty', -- 'my own' floating terminal plugin
+  -- require 'config.plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }
 
