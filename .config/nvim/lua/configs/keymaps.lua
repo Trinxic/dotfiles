@@ -80,3 +80,37 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<leader>Ww', ':w<CR>', { desc = 'Write without quitting' })
 vim.keymap.set('n', '<leader>Wq', ':wq<CR>', { desc = 'Write and quit' })
 vim.keymap.set('n', '<leader>Wn', ':noautocmd w<CR>', { desc = 'Write without formatting' })
+
+-- Moving comments
+vim.keymap.set('n', '<leader>mc', function()
+  local comment_api = require 'Comment.api' -- get Comment.nvim api variable
+  comment_api.toggle.linewise.current() -- comment current line to get comment marker
+
+  local line = vim.api.nvim_get_current_line() -- get the current line
+  comment_api.toggle.linewise.current() -- un-comment the line
+
+  local first_non_ws = line:find '%S' or 1 -- find the first character
+  local following_ws = line:find('%S', first_non_ws + 1) -- find the first whitespace after
+  if not following_ws then
+    return -- if no whitespace, something went wrong
+  end
+
+  -- comment marker is whatever was before the `following_whitespace` ( ex. '//' in Java)
+  local cmt_marker = line:sub(first_non_ws, following_ws - 1)
+
+  line = vim.api.nvim_get_current_line() -- get the line after un-commenting
+
+  local cmt_start = line:find(cmt_marker, following_ws) -- find comment marker
+  if not cmt_start then
+    return -- there was no in-line comment :/
+  end
+
+  local code_part = line:sub(1, cmt_start - 1) -- everything up to comment
+  code_part = code_part:gsub('%s+$', '') -- then no trailing whitespace
+  local cmt_part = line:sub(cmt_start) -- everything comment onwards
+
+  vim.api.nvim_set_current_line(code_part) -- replace current line with just code_part
+
+  vim.cmd('normal! O' .. cmt_part) -- create new line above and insert comment
+  vim.cmd 'silent normal! j$' -- move to end of code-line
+end, { desc = 'Move [c]omment to new line above' })
