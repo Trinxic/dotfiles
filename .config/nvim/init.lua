@@ -56,7 +56,7 @@ require('lazy').setup {
   require 'plugins.leetcode',         -- Leetcode
   require 'plugins.jdtls',            -- used for proper java lsp, etc.
   require 'plugins.floatty',          -- 'my own' floating terminal plugin
-  require 'plugins.copilot',
+  require 'plugins.copilot-chat',     -- Copilot Chat
   -- require 'config.plugins.bufferline',  -- not sure I'll be using this...
   -- require 'mini'
 }
