@@ -1,5 +1,4 @@
 # pacman
-alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
 alias pss='pacman -Ss'  # list available packages
 alias sps='sudo pacman -S'  # install package
 alias spr='sudo pacman -R'  # remove package
@@ -39,13 +38,17 @@ alias cd...='cd ../..'
 alias z..='z ..'
 alias z...='z ../..'
 
+# scripts
+alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
+alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
+alias auto-vnc='~/Documents/auto-vnc/auto_vnc_lab.sh'
+
 # other
 alias exti='exit'  # correct misspelling
 alias srce='source ~/.zshrc'  # reload zsh configs
 alias ls='ls --color=auto'
 alias la='eza --long --time-style=relative --total-size --no-permissions --no-user --all --group-directories-first --icons=always'
 alias lap='eza --long -h --time-style=long-iso --total-size --all --group-directories-first --icons=always'
-alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
 mktouch() {
   local dir
   dir="${1%/*}"
