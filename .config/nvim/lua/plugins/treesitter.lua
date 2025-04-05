@@ -6,7 +6,7 @@ return {
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]]
-  opts = {  -- See `:help nvim-treesitter`
+  opts = {                          -- See `:help nvim-treesitter`
     ensure_installed = {
       'bash',
       'c',
@@ -30,7 +30,7 @@ return {
       'regex',
       'vim',
       'vimdoc',
-      'yaml'
+      'yaml',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
