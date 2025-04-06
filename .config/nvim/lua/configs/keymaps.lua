@@ -82,7 +82,7 @@ vim.keymap.set('n', '<leader>Wq', ':wq<CR>', { desc = 'Write and quit' })
 vim.keymap.set('n', '<leader>Wn', ':noautocmd w<CR>', { desc = 'Write without formatting' })
 
 -- Moving comments
-vim.keymap.set('n', '<leader>mc', function()
+vim.keymap.set('n', '<leader>mca', function()
   local comment_api = require 'Comment.api' -- get Comment.nvim api variable
   comment_api.toggle.linewise.current() -- comment current line to get comment marker
 
@@ -113,4 +113,20 @@ vim.keymap.set('n', '<leader>mc', function()
 
   vim.cmd('normal! O' .. cmt_part) -- create new line above and insert comment
   vim.cmd 'silent normal! j$' -- move to end of code-line
-end, { desc = 'Move [c]omment to new line above' })
+end, { desc = '[M]ove [c]omment to new line above' })
+
+vim.keymap.set('n', '<leader>mci', function()
+  local row = vim.api.nvim_win_get_cursor(0)[1]
+  local comment_line = vim.api.nvim_buf_get_lines(0, row - 1, row, false)[1] -- current line content
+  local next_line = vim.api.nvim_buf_get_lines(0, row, row + 1, false)[1] -- next line content
+
+  local first_non_ws = comment_line:find '%S' or 1 -- find the first character
+  local comment = comment_line:sub(first_non_ws) -- everything comment onwards
+
+  local combined = next_line .. '  ' .. comment
+  vim.api.nvim_buf_set_lines(0, row, row + 1, false, { combined }) -- replace next line with combined
+
+  vim.api.nvim_buf_set_lines(0, row - 1, row, false, {}) -- remove current line
+
+  vim.api.nvim_win_set_cursor(0, { row, #combined }) -- move cursor to end of new line
+end, { desc = '[M]ove [c]omment [i]n-line' })
