@@ -15,7 +15,7 @@ return {
       css = { 'stylelint' },
     }
 
-    vim.api.nvim_create_autocmd({ 'BufWritePost', 'LeaveInsert' }, {
+    vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave' }, {
       callback = function()
         lint.try_lint()
       end,
