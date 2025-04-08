@@ -10,17 +10,18 @@ zsh_add_plugin 'zsh-autosuggestions'
 zsh_add_plugin 'zsh-syntax-highlighting'
 zsh_add_plugin 'zsh-you-should-use' 
 
-# --------- zoxide -------- #
+# -------- zoxide --------- #
 # https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
 # DON'T CHANGE TO DOUBLE QUOTES
 eval "$(zoxide init zsh)"
 
-# --------- Prompt -------- #
+# -------- Prompt --------- #
 # (powerlevel10k)
 zsh_add_config 'zsh-prompt'
 # Created by `pipx` on 2025-02-08 23:09:19
 export PATH="$PATH:/home/david/.local/bin"
 
+# ------- Fastfetch ------- #
 # Auto-Launch fastfetch when openning terminal
 if [[ $- == *i* ]]; then
     fetch

@@ -1,10 +1,15 @@
-# pacman
+# package managers
 alias pss='pacman -Ss'  # list available packages
 alias sps='sudo pacman -S'  # install package
 alias spr='sudo pacman -R'  # remove package
 alias sprs='sudo pacman -Rs'  # remove package and (unused) dependencies
+alias yayss='yay -Ss'  # list available packages
+alias yays='yay -S'  # install package
+alias yayr='yay -R'  # remove package
+alias yayrs='yay -Rs'  # remove package and (unused) dependencies
 
 # apps
+alias keepassxc='QT_QPA_PLATFORM=xcb keepassxc'
 alias code='codium'
 alias nim="nvim"
 alias snim='sudo nvim'  # lol
@@ -49,6 +54,7 @@ alias srce='source ~/.zshrc'  # reload zsh configs
 alias ls='ls --color=auto'
 alias la='eza --long --time-style=relative --total-size --no-permissions --no-user --all --group-directories-first --icons=always'
 alias lap='eza --long -h --time-style=long-iso --total-size --all --group-directories-first --icons=always'
+alias tree='tree -C -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_Store"'
 mktouch() {
   local dir
   dir="${1%/*}"

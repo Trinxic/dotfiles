@@ -4,13 +4,17 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   cmd = { 'ConformInfo' },
   keys = {
-    { '<leader>f', function()
-      require('conform').format {
-        async = true,
-        lsp_fallback = true,
-        timeout_ms = 500,
-      }
-    end, desc = '[f]ormat current file/selection' },
+    {
+      '<leader>f',
+      function()
+        require('conform').format {
+          async = true,
+          lsp_fallback = true,
+          timeout_ms = 500,
+        }
+      end,
+      desc = '[f]ormat current file/selection',
+    },
   },
   opts = {
     notify_on_error = true,
@@ -24,7 +28,7 @@ return {
     formatters_by_ft = {
       bash = { 'beautysh' },
       css = { 'prettier' },
-      go = { 'gofumpt' },
+      go = { 'goimports', 'gofumpt' },
       html = { 'prettier' },
       java = { 'google-java-format' },
       javascript = { 'prettier' },
