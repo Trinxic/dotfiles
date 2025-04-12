@@ -145,6 +145,13 @@ return {
       end,
     })
 
+    vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+      pattern = { 'pre-commit', 'pre-push', 'post-merge', 'post-checkout', 'zsh-*' },
+      callback = function()
+        vim.bo.filetype = 'sh'
+      end,
+    })
+
     -- Change diagnostic symbols in the sign column (gutter)
     -- if vim.g.have_nerd_font then
     --   local signs = { ERROR = '', WARN = '', INFO = '', HINT = '' }
@@ -228,6 +235,11 @@ return {
               callSnippet = 'Replace',
             },
             runtime = { version = 'LuaJIT' },
+            diagnostics = {
+              globals = { 'vim' }, -- (mostly) fix 'undefined varible: vim' warning
+              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              disable = { 'missing-fields' },
+            },
             workspace = {
               checkThirdParty = false,
               library = {
@@ -235,8 +247,6 @@ return {
                 unpack(vim.api.nvim_get_runtime_file('', true)),
               },
             },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            diagnostics = { disable = { 'missing-fields' } },
           },
         },
       },
@@ -257,7 +267,18 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      'beautysh', -- bash
+      'black', -- python
+      'gofumpt', -- go
+      'goimports', -- go
+      'google-java-format', -- java
+      'isort', -- python
+      'jq', -- json
+      'prettier', -- (multiple)
+      'prettierd', -- (multiple)
+      'ruff', -- python
       'stylua', -- Used to format Lua code
+      'yamlfix', -- yaml
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
