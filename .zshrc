@@ -26,3 +26,11 @@ export PATH="$PATH:/home/david/.local/bin"
 if [[ $- == *i* ]]; then
     fetch
 fi
+
+# pnpm
+export PNPM_HOME="/Users/d.anderson/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
