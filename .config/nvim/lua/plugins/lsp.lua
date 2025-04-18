@@ -278,6 +278,7 @@ return {
       'prettierd', -- (multiple)
       'ruff', -- python
       'stylua', -- Used to format Lua code
+      'typescript-language-server', -- ts
       'yamlfix', -- yaml
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

@@ -40,6 +40,6 @@ echo -e "${GREEN}All scripts completed${RESET}"
 echo
 
 # LAST STEP
-cd $HOME/dotfiles # ensure pwd is ~/dotfiles
+cd "$HOME/dotfiles" || exit 1 # ensure pwd is ~/dotfiles
 stow -D .         # remove symlinks
 stow .            # re-apply symlinks

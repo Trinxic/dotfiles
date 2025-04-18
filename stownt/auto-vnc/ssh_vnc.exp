@@ -1,0 +1,65 @@
+#!/usr/bin/expect -f
+
+set timeout 20
+
+set username [lindex $argv 0]
+set password [lindex $argv 1]
+set twofa [lindex $argv 2]
+set server "$username@pascal.ee.ryerson.ca"
+
+# Start SSH
+spawn ssh $server
+
+expect "($server) Password: " { send "$password\r" }
+expect "($server) Verification code: " { send "$twofa\r" }
+expect -re "/$username> " { send "vncconnect list\r" }
+
+# Kill VNC session if one exists
+# Hopefully only 0 or 1 exists
+expect {
+    -re "No active VNC sessions found." {}
+    -re "Vnc Host:" {
+        send "vncconnect kill\r"
+        expect "Password: " { send "$password\r" }
+        expect "Verification code: " { send "$twofa\r" }
+    }
+    timeout {
+        puts "Timeout waiting for VNC sessions."
+        exit 1
+    }
+}
+
+# Start VNC session
+expect -re "/$username> " { send "vncconnect\r" }
+expect "Password: " { send "$password\r" }
+expect "Verification code: " { send "$twofa\r" }
+
+# Get the vnc ssh command
+expect {
+    # x2-quotes breaks the regex
+    # Using braces instead
+    -re {(ssh [^\r\n]+)} {
+        # Extract the SSH command
+        set ssh_command $expect_out(1,string)
+        # Remove the trailing newline
+        set ssh_command [string trim $ssh_command "\r\n"]
+    }
+    timeout {
+        puts "Timeout waiting for SSH command."
+        exit 1
+    }
+}
+
+expect -re "/$username> " { send "exit\r" }
+expect eof
+
+# Create the VNC-able ssh connection
+# "ssh" is already in the command, don't execute "ssh" before the var
+# "{*}" expands arguments (instead of passing them as a single string)
+spawn {*}$ssh_command
+
+expect "($server) Password: " { send "$password\r" }
+expect "($server) Verification code: " { send "$twofa\r" }
+
+# Make user manually close connection
+interact
