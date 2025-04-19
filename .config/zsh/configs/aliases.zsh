@@ -2,7 +2,7 @@
 alias pss='pacman -Ss'  # list available packages
 alias sps='sudo pacman -S'  # install package
 alias spr='sudo pacman -R'  # remove package
-alias sprs='sudo pacman -Rs'  # remove package and (unused) dependencies
+alias sprs='sudo pacman -Rns'  # remove package and (unused) dependencies
 alias yayss='yay -Ss'  # list available packages
 alias yays='yay -S'  # install package
 alias yayr='yay -R'  # remove package
@@ -43,6 +43,7 @@ alias cd..='cd ..'
 alias cd...='cd ../..'
 alias z..='z ..'
 alias z...='z ../..'
+# TODO: Add a function to go back n-1 times where n is the number of dots
 
 # scripts
 alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
@@ -61,8 +62,6 @@ mktouch() {
   dir="${1%/*}"
   mkdir -p "$dir" && touch "$1"
 }  # creates file and necessary director(y/ies)
-
-
 
 # colorize grep
 alias grep='grep --color=auto'
