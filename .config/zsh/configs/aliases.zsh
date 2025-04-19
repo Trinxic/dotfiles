@@ -39,10 +39,8 @@ alias gitp='git push'
 alias gitpr='git push --rebase'
 
 # navigating dicrectories
-alias cd..='cd ..'
-alias cd...='cd ../..'
-alias z..='z ..'
-alias z...='z ../..'
+# alias cd='..'
+# alias cd...='cd ../..'
 # TODO: Add a function to go back n-1 times where n is the number of dots
 
 # scripts

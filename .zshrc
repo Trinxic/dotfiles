@@ -27,7 +27,10 @@ fi
 # -------- zoxide --------- #
 # https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
 # DON'T CHANGE TO DOUBLE QUOTES
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+
+# - fzf shell integration - #
+eval "$(fzf --zsh)"
 
 # --------- pipx ---------- #
 # Created by `pipx` on 2025-02-08 23:09:19
