@@ -14,7 +14,8 @@ if [[ $- == *i* ]]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#   uncomment to access
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ----- Powerlevel10k ----- #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -24,13 +25,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# -------- zoxide --------- #
-# https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
-# DON'T CHANGE TO DOUBLE QUOTES
-eval "$(zoxide init --cmd cd zsh)"
-
 # - fzf shell integration - #
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 # --------- pipx ---------- #
 # Created by `pipx` on 2025-02-08 23:09:19
@@ -44,3 +40,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# -------- zoxide --------- #
+# END of config file
+# https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
+eval "$(zoxide init --cmd cd zsh)"
