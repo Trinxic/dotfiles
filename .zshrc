@@ -14,8 +14,7 @@ if [[ $- == *i* ]]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#   uncomment to access
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ----- Powerlevel10k ----- #
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
