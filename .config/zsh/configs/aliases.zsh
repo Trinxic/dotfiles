@@ -9,6 +9,7 @@ alias yayr='yay -R'  # remove package
 alias yayrs='yay -Rs'  # remove package and (unused) dependencies
 
 # apps
+alias start-ssh='sudo systemctl start sshd && sudo systemctl enable sshd'
 alias keepassxc='QT_QPA_PLATFORM=xcb keepassxc'
 alias code='codium'
 alias nim="nvim"
@@ -46,6 +47,7 @@ alias gitpr='git push --rebase'
 # scripts
 alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
+alias keybinds-full='bat ~/dotfiles/.config/hypr/configs/keybinds.conf'
 alias auto-vnc='~/Documents/auto-vnc/auto_vnc_lab.sh'
 
 # other

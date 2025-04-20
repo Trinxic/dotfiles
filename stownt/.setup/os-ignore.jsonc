@@ -6,6 +6,7 @@
         "^/\.config/gtk-3\.0(/|$)",
         "^/\.config/hypr(/|$)",
         "^/\.config/kitty(/|$)",
+        "^/\.config/satty(/|$)",
         "^/\.config/swww(/|$)",
         "^/\.config/Thunar(/|$)",
         "^/\.config/wofi(/|$)",
