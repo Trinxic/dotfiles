@@ -3,13 +3,14 @@
 // NOTE: no comma on the last item in a list, etc.
 {
     "mac": [  // Add directories/files you want to ignore on mac
+        "^/\.config/gtk-3\.0(/|$)",
         "^/\.config/hypr(/|$)",
         "^/\.config/kitty(/|$)",
         "^/\.config/swww(/|$)",
         "^/\.config/Thunar(/|$)",
-        "^/\.config/wofi(/|$)"
+        "^/\.config/wofi(/|$)",
+        "^/\.local(/|$)"
     ],
     "linux": [  // Add directories/files you want to ignore on linux
-        // "^/\.config/ghostty(/|$)"
     ]
 }
