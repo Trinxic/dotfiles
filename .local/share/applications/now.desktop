@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Obsidian 'now' Note
+Comment=Open 'now' note in Obsidian
+Exec=/home/trinxic/Documents/scripting/obs-note.sh
+Icon=obsidian
+Terminal=false
+Type=Application
+Categories=Utility;Obsidian;Notes
