@@ -7,7 +7,7 @@ answer=""
 
 countdown() {
     for ((i=timeout; i>-1; i--)); do
-        echo -ne "\rDo you want to continue? [$i] (Y/n): "
+        echo -ne "\rDo you want to reboot now? [$i] (Y/n): "
         sleep 1
     done
 }
