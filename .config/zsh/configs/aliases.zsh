@@ -18,20 +18,6 @@ alias snim='sudo nvim'  # lol
 alias sv='sudo nvim'
 alias neofetch='fastfetch'
 alias stow='stow --verbose'
-fetch() {
-  if [[ $# -eq 0 ]]; then
-    if [[ "$(uname)" == "Linux" ]]; then
-      fastfetch --config ~/dotfiles/.config/fastfetch/linux-config.jsonc
-    elif [[ "$(uname)" == "Darwin" ]]; then
-      fastfetch --config ~/dotfiles/.config/fastfetch/macos-config.jsonc
-    else
-      echo "Unsupported OS..."
-      fastfetch
-    fi
-  else
-    fastfetch "$@"
-  fi
-}
 # ----------- zsh ---------- #
 alias srce='source ~/.zshrc'  # reload zsh configs
 

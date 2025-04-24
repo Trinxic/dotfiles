@@ -1,11 +1,7 @@
 # -------- Imports -------- #
-source ~/dotfiles/.config/zsh/functions.zsh  # custom functions
-
-zsh_add_config 'options.zsh'
-zsh_add_config 'exports.zsh'
-zsh_add_config 'aliases.zsh'
-zsh_add_config 'keybinds.zsh'
-zsh_add_config 'plugin-manager.zsh' # ensure PL10k is setup first
+for config_file in "$HOME/dotfiles/.config/zsh/configs/"*.zsh; do
+    [ -f "$config_file" ] && source "$config_file"
+done
 
 # ------- Fastfetch ------- #
 # Auto-Launch fastfetch when openning terminal
