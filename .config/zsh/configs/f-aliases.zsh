@@ -4,10 +4,8 @@ zoxid() {
   if [[ "$1" =~ ^\.+$ ]]; then
     # Count the number of periods and move n - 1 directories back
     local n=${#1}
+    echo "$n"
     command cd "..$(printf '/..%.0s' $(seq 1 $((n-1))))"
-    else
-      # Otherwise, use the default cd behavior
-      command cd "$@"
   else
     command zoxid "$@"
   fi

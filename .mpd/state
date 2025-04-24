@@ -1,10 +1,10 @@
-sw_volume: 40
+sw_volume: 50
 audio_device_state:1:My ALSA Device
 audio_device_state:1:PipeWire Sound Server
 audio_device_state:1:my_fifo
 state: pause
-current: 40
-time: 169.263
+current: 1
+time: 98.546
 random: 0
 repeat: 0
 single: 0
@@ -55,4 +55,13 @@ playlist_begin
 38:The Life Of Pablo/10 Waves.flac
 39:The Life Of Pablo/17 No More Parties In LA.flac
 40:Vultures_2/01 - ¥$, Kanye West, Ty Dolla $ign - SLIDE(Explicit).mp3
+41:Good Ass Job/Throwing Money Everywhere.mp3
+42:Good Ass Job/I'll Be Alright.mp3
+43:Good Ass Job/See Me Again.mp3
+44:Good Ass Job/So Appalled.mp3
+45:Good Ass Job/Hard Horn Nightmare.mp3
+46:Good Ass Job/Teairra Mari Ft. Kanye West Diamonds Prod. By MaddScientist.mp3
+47:Good Ass Job/Yeezy.mp3
+48:Good Ass Job/Flight_School.mp3
+49:Good Ass Job/JUST KILL ME PLEASE.mp3
 playlist_end
