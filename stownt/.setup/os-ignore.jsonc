@@ -6,11 +6,14 @@
         "^/\.config/gtk-3\.0(/|$)",
         "^/\.config/hypr(/|$)",
         "^/\.config/kitty(/|$)",
+        "^/\.config/ncmpcpp(/|$)",
         "^/\.config/satty(/|$)",
         "^/\.config/swww(/|$)",
         "^/\.config/Thunar(/|$)",
         "^/\.config/wofi(/|$)",
+        "^/\.config/yazi(/|$)",
         "^/\.local(/|$)"
+        "^/\.mpd(/|$)"
     ],
     "linux": [  // Add directories/files you want to ignore on linux
     ]

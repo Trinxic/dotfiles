@@ -44,3 +44,6 @@ esac
 # END of config file
 # https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
 eval "$(zoxide init --cmd cd zsh)"
+
+# ---------- MPD ---------- #
+[ ! -s ~/.mpd/pid ] && mpd
