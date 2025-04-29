@@ -48,3 +48,6 @@ else
     echo -e "${RED}Brewfile not found! Please create a Brewfile before running this script.${RESET}"
     exit 1
 fi
+
+# Update packages
+brew update && brew upgrade

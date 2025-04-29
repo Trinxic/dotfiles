@@ -1,0 +1,55 @@
+[user]
+	name = Trinxic
+	email = davida_2016@outlook.com
+
+; [user]
+; 	signingkey = ###
+;
+; [commit]
+; 	gpgSign = true
+
+; [core]
+	; editor = code --wait
+	; autocrlf = true
+	; whitespaces = fix,-indent-with-non-tab,trailing-space,space-before-tab
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+
+[url "git@github.com:Trinxic/"]
+	insteadOf = "trinxic:"
+
+[init]
+	defaultBranch = master
+
+[status]
+	showUntrackedFiles = all
+	branch = true
+	showStash = true
+
+[pull]
+	rebase = true
+
+[log]
+	abbrevCommit = true
+	graphColors = blue,yellow,cyan,magenta,green,red
+	pretty = format:'%C(magenta)%h %C(white) %an  %ar$C(auto)  $D$n$s$n'
+
+[color "decorate"]
+	HEAD = red
+	branch = blue
+	tag = yellow
+	remoteBranch = magenta
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = -taggerdate
+
+[color "branch"]
+	current = magenta
+	local = default
+	remote = yellow
+	upstream = green
+	plain = blue
