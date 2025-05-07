@@ -61,7 +61,7 @@ vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
 -- Open Neo-Tree (done within `../plugins/neo-tree.lua` config)
-vim.keymap.set('n', '<Bslash>', ':Neotree toggle<CR>', opts)
+vim.keymap.set('n', '<Bslash>', ':Neotree focus<CR>', opts)
 
 -- Navigate diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic' })

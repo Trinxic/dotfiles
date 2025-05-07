@@ -18,6 +18,7 @@ alias snim='sudo nvim'  # lol
 alias sv='sudo nvim'
 alias neofetch='fastfetch'
 alias stow='stow --verbose'
+
 # ----------- zsh ---------- #
 alias srce='source ~/.zshrc'  # reload zsh configs
 alias editaliases='nvim ~/dotfiles/.config/zsh/configs/aliases.zsh'
@@ -37,9 +38,9 @@ alias gu='git pull'
 alias gur='git pull --rebase'
 
 # navigating dicrectories
-# alias cd.='..'
+alias cd..='cd ..'
 alias cd...='cd ../..'
-# TODO: Add a function to go back n-1 times where n is the number of dots
+alias cd....='cd ../../..'
 
 # -------- scripts --------- #
 alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
@@ -54,7 +55,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias ls='ls --color=auto'
 alias lsla='ls -la --color=auto'
-alias la='eza --long --time-style=relative --total-size --no-permissions --no-user --all --group-directories-first --icons=always'
+alias la='eza --long --time-style=relative --bytes --no-permissions --no-user --all --group-directories-first --icons=always'
 alias lap='eza --long -h --time-style=long-iso --total-size --all --group-directories-first --icons=always'
 alias tree='tree -C -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_Store"'
 

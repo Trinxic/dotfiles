@@ -9,10 +9,11 @@ if [[ $- == *i* ]]; then
   fetch
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # ----- Powerlevel10k ----- #
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/dotfiles/.p10k.zsh ]] || source ~/dotfiles/.p10k.zsh
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -22,6 +23,10 @@ fi
 
 # - fzf shell integration - #
 source <(fzf --zsh)
+
+# --- vim command-edit ---- #
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # --------- pipx ---------- #
 # Created by `pipx` on 2025-02-08 23:09:19
@@ -41,5 +46,11 @@ esac
 # https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
 eval "$(zoxide init --cmd cd zsh)"
 
-# ---------- MPD ---------- #
-[ ! -s ~/.mpd/pid ] && mpd
+# ----- OS-Specifics ------ #
+if [[ "$(uname)" == "Linux" ]]; then
+  # Music Player Daemon (MPD)
+  [ ! -s ~/.mpd/pid ] && mpd
+else
+  # Angular CLI autocompletion
+  source <(ng completion script)
+fi

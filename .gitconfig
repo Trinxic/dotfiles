@@ -27,6 +27,9 @@
 	branch = true
 	showStash = true
 
+[push]
+	default = simple
+
 [pull]
 	rebase = true
 
