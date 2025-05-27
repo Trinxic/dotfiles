@@ -47,6 +47,7 @@ alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
 alias keybinds-full='bat ~/dotfiles/.config/hypr/configs/keybinds.conf'
 alias auto-vnc='~/Documents/auto-vnc/auto_vnc_lab.sh'
+alias roundc='~/dotfiles/.config/hypr/scripts/toggle-corners.sh'
 
 # -------- listing --------- #
 # colorize grep
