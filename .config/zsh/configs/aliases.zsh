@@ -62,6 +62,7 @@ alias tree='tree -C -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_St
 
 # ---------- misc ---------- #
 alias exti='exit'  # correct misspelling
+alias fg=' fg'  # don't record in history
 mktouch() {
   local dir
   dir="${1%/*}"

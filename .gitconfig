@@ -1,6 +1,7 @@
 [user]
 	name = Trinxic
 	email = davida_2016@outlook.com
+	editor = nvim
 
 ; [user]
 ; 	signingkey = ###
@@ -26,6 +27,10 @@
 	showUntrackedFiles = all
 	branch = true
 	showStash = true
+
+
+[core]
+	editor = nvim
 
 [push]
 	default = simple

@@ -29,4 +29,4 @@ _darcs
 
 
 # --- Ignore Script --- #
-
+^/\.p10k.zsh$

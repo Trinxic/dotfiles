@@ -54,3 +54,6 @@ else
   # Angular CLI autocompletion
   source <(ng completion script)
 fi
+
+# Created by `pipx` on 2025-06-03 23:16:38
+export PATH="$PATH:/home/trinxic/.local/bin"

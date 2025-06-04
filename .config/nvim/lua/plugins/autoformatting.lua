@@ -9,7 +9,7 @@ return {
       function()
         require('conform').format {
           async = true,
-          lsp_fallback = true,
+          lsp_format = 'fallback',
           timeout_ms = 500,
         }
       end,
@@ -21,7 +21,7 @@ return {
     notify_no_formatters = true,
 
     format_on_save = {
-      lsp_fallback = true,
+      lsp_format = 'fallback',
       timeout_ms = 500,
     },
 
@@ -37,10 +37,10 @@ return {
       lua = { 'stylua' },
       markdown = { 'prettierd', 'prettier' },
       python = function(bufnr)
-        if require('conform').get_formatters(bufnr) then
+        if require('conform').get_formatter_info('ruff_format', bufnr).available then
           return { 'ruff_format' }
         else
-          return { 'black', 'isort' }
+          return { 'isort', 'black' }
         end
       end,
       rust = { 'rustfmt', lsp_format = 'fallback' },

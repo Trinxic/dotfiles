@@ -12,9 +12,11 @@
         "^/\.config/Thunar(/|$)",
         "^/\.config/wofi(/|$)",
         "^/\.config/yazi(/|$)",
-        "^/\.local(/|$)"
-        "^/\.mpd(/|$)"
+        "^/\.local(/|$)",
+        "^/\.mpd(/|$)",
+	"^/\.p10k.zsh$"
     ],
     "linux": [  // Add directories/files you want to ignore on linux
+	"^/\.p10k.zsh$"
     ]
 }
