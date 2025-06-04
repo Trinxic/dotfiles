@@ -5,7 +5,7 @@ RED="\e[31m"
 GREEN="\e[32m"
 RESET="\e[0m"
 
-# Detect kernal
+# Detect kernel
 if [[ "$(uname)" == "Darwin" ]]; then
     OS="mac"
 elif [[ "$(uname)" == "Linux" ]]; then
@@ -40,6 +40,12 @@ fi
 
 # Initialize a marker to search for within $OUTPUT_FILE
 HEADER="# --- Ignore Script --- #"
+
+# Check if the output file exists, create it if not
+if [[ ! -f "$OUTPUT_FILE" ]]; then
+    echo -e "${GREEN}Creating $OUTPUT_FILE...${RESET}"
+    touch "$OUTPUT_FILE"
+fi
 
 # Delete everything from "$HEADER" onward if it exists
 if grep -q "$HEADER" "$OUTPUT_FILE"; then

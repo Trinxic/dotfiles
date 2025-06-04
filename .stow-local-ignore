@@ -29,4 +29,15 @@ _darcs
 
 
 # --- Ignore Script --- #
+^/\.config/gtk-3\.0(/|$)
+^/\.config/hypr(/|$)
+^/\.config/kitty(/|$)
+^/\.config/ncmpcpp(/|$)
+^/\.config/satty(/|$)
+^/\.config/swww(/|$)
+^/\.config/Thunar(/|$)
+^/\.config/wofi(/|$)
+^/\.config/yazi(/|$)
+^/\.local(/|$)
+^/\.mpd(/|$)
 ^/\.p10k.zsh$
