@@ -1,13 +1,5 @@
-# -------- Imports -------- #
-for config_file in "$HOME/dotfiles/.config/zsh/configs/"*.zsh; do
-    [ -f "$config_file" ] && source "$config_file"
-done
-
-# ------- Fastfetch ------- #
-# Auto-Launch fastfetch when openning terminal
-if [[ $- == *i* ]]; then
-  fetch
-fi
+# Import plugin manager
+[[ -f "$HOME/dotfiles/.config/zsh/plugin-manager.zsh" ]] && source "$HOME/dotfiles/.config/zsh/plugin-manager.zsh"
 
 # ----- Powerlevel10k ----- #
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -19,6 +11,17 @@ fi
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# -------- Imports -------- #
+for config_file in "$HOME/dotfiles/.config/zsh/configs/"*.zsh; do
+    [ -f "$config_file" ] && source "$config_file"
+done
+
+# ------- Fastfetch ------- #
+# Auto-Launch fastfetch when openning terminal
+if [[ $- == *i* ]]; then
+  fetch
 fi
 
 # - fzf shell integration - #

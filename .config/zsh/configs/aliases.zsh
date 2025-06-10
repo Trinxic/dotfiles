@@ -70,6 +70,6 @@ mktouch() {
 }  # creates file and necessary director(y/ies)
 
 # overwrite confirmation
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp='cp -i -v'
+alias mv='mv -i -v'
+alias rm='rm -i -v'
