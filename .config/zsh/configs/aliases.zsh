@@ -43,7 +43,7 @@ alias cd...='cd ../..'
 alias cd....='cd ../../..'
 
 # -------- scripts --------- #
-alias update='sudo pacman -Syyu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
+alias update='sudo pacman -Syu && ~/dotfiles/.config/zsh/scripts/ask-to-reboot.sh'
 alias keybinds='~/dotfiles/.config/zsh/scripts/get-keybinds.sh'
 alias keybinds-full='bat ~/dotfiles/.config/hypr/configs/keybinds.conf'
 alias auto-vnc='~/Documents/auto-vnc/auto_vnc_lab.sh'

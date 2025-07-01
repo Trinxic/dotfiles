@@ -49,6 +49,21 @@ esac
 # https://github.com/ajeetdsouza/zoxide?tab=readme-ov-file#installation
 eval "$(zoxide init --cmd cd zsh)"
 
+# --------- pipx ---------- #
+# Created by `pipx` on 2025-06-03 23:16:38
+export PATH="$PATH:/home/trinxic/.local/bin"
+
+# ------ jabba/Java ------- #
+# Jabba initialization for zsh
+if [ -s "$HOME/.jabba/jabba.sh" ]; then
+  source "$HOME/.jabba/jabba.sh"
+
+  # Only run jabba use if JAVA_HOME isn't already set
+  if [[ ! "$JAVA_HOME" =~ ^/tmp/jabba- ]] || [[ ! -e "$JAVA_HOME" ]]; then
+    jabba use default
+  fi
+fi
+
 # ----- OS-Specifics ------ #
 if [[ "$(uname)" == "Linux" ]]; then
   # Music Player Daemon (MPD)
@@ -58,5 +73,3 @@ else
   source <(ng completion script)
 fi
 
-# Created by `pipx` on 2025-06-03 23:16:38
-export PATH="$PATH:/home/trinxic/.local/bin"
