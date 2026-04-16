@@ -1,5 +1,56 @@
 # [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
+## Setup
+### Setting Up Git
+```
+# add user
+$ git config --global user.name "Trinxic"
+$ git config --global user.email "<email>"
+$ git config --list  # confirmation
+
+# generate ssh key
+ssh-keygen -t ed25519 -C "<email>"  # same as 'user.email'
+
+# start ssh agent
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_ed25519
+
+# print public key and then add it to github keys
+$ cat ~/.ssh/id_ed25519.pub
+$ ssh -T git@github.com  # test connection
+
+# use ssh instead of https
+git clone git@github.com:username/repo.git
+```
+#### WSL SSH Pesistancy
+add to bashrc or zshrc
+```
+# Start SSH agent if not running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  eval "$(ssh-agent -s)"
+fi
+
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
+```
+
+### Creating The `dotfiles` Directory
+Since this repo includes other repos for things like zsh plugins, you must
+use the `--recurse-submodules` tag when cloning.
+```
+$ git clone --recurse-submodules git@github.com:Trinxic/dotfiles ~/dotfiles
+$ cd dotfiles  # move into the newly created directory
+```
+If you have already cloned the repo, you can use: 
+`$ git submodule update --init --recursive`
+
+### Sym-Linking Everything
+The following script will ensure that only OS-related dotfiles will be symlinked.
+Please do not delete the other files (or at least don't push to the repo if you do)
+```
+$ chmod +x ~/dotfiles/setup.sh  # allow `setup.sh` to be executed
+$ ~/dotfiles/setup.sh           # run the setup script
+```
+
 ## [Stow](https://www.gnu.org/software/stow)
 
 #### What Is It
@@ -19,47 +70,28 @@ brew list <package>
 brew install <package>
 
 # Linux (Arch)
-pacman -Ss <package>
-pacman -S <package>
+$ pacman -Ss <package>
+$ pacman -S <package>
 ```
 
 ### Dependencies
 Make sure you have all the necessary dependencies:
 ```
 # Linux
-zsh         # shell
-fzf         # shell fuzzy finder
-zoxide      # improved 'cd'
-stow        # see above
-firefox     # ...
-fastfetch   # preview specs and OS icon
-sddm        # login manager (there's a different name for it)
-hypr(land)  # wayland version
-kitty       # terminal emulator
-wofi        # wayland version of rofi
-waybar      # status bar
+$ zsh         # shell
+$ fzf         # shell fuzzy finder
+$ zoxide      # improved 'cd'
+$ stow        # see above
+$ firefox     # ...
+$ fastfetch   # preview specs and OS icon
+$ sddm        # login manager (there's a different name for it)
+$ hypr(land)  # wayland version
+$ kitty       # terminal emulator
+$ wofi        # wayland version of rofi
+$ waybar      # status bar
 
 # MacOS
 # The setup script will install brew & other apps automatically.
 # To see said apps, check out:
 ~/dotfiles/stownt/.setup/Brewfile
-```
-
-## Setup
-### Creating The `dotfiles` Directory
-Since this repo includes other repos for things like zsh plugins, you must
-use the `--recurse-submodules` tag when cloning.
-```
-git clone --recurse-submodules git@github.com:Trinxic/dotfiles ~/dotfiles
-cd dotfiles  # move into the newly created directory
-```
-If you have already cloned the repo, you can use: 
-`git submodule update --init --recursive`
-
-### Sym-Linking Everything
-The following script will ensure that only OS-related dotfiles will be symlinked.
-Please do not delete the other files (or at least don't push to the repo if you do)
-```
-chmod +x ~/dotfiles/setup.sh  # allow `setup.sh` to be executed
-~/dotfiles/setup.sh           # run the setup script
 ```
