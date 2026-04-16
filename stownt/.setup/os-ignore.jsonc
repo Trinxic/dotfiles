@@ -13,10 +13,8 @@
         "^/\.config/wofi(/|$)",
         "^/\.config/yazi(/|$)",
         "^/\.local(/|$)",
-        "^/\.mpd(/|$)",
-	"^/\.p10k.zsh$"
+        "^/\.mpd(/|$)"
     ],
     "linux": [  // Add directories/files you want to ignore on linux
-	"^/\.p10k.zsh$"
     ]
 }

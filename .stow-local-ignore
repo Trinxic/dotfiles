@@ -1,0 +1,8 @@
+# --- Universal Ignores --- #
+^/\.local(/|$)
+^/\.p10k.zsh$
+^/\README.md$
+^/\TODO.md$
+^/\setup.sh$
+
+# --- Ignore Script --- #
