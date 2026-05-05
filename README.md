@@ -99,6 +99,7 @@ brew update && brew upgrade  # all packages
 Make sure you have all the necessary dependencies:
 ```
 # Linux
+$ jq          # cli json parsing
 $ bat         # better-visualize 'cat'
 $ zsh         # shell
 $ fzf         # shell fuzzy finder

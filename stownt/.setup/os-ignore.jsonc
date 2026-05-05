@@ -3,15 +3,21 @@
 // NOTE: no comma on the last item in a list, etc.
 {
     "mac": [  // Add directories/files you want to ignore on mac
+        "^/\.config/go(/|$)",
         "^/\.config/gtk-3\.0(/|$)",
         "^/\.config/hypr(/|$)",
+        "^/\.config/hyprpanel(/|$)",
         "^/\.config/kitty(/|$)",
         "^/\.config/ncmpcpp(/|$)",
         "^/\.config/satty(/|$)",
         "^/\.config/swww(/|$)",
         "^/\.config/Thunar(/|$)",
+        "^/\.config/uv(/|$)",
         "^/\.config/wofi(/|$)",
+        "^/\.config/yay(/|$)",
         "^/\.config/yazi(/|$)",
+        "^/\.config/zen(/|$)",
+        "^/\.config/mimeapps.list$",
         "^/\.local(/|$)",
         "^/\.mpd(/|$)"
     ],
