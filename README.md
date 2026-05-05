@@ -20,15 +20,25 @@ $ ssh -T git@github.com  # test connection
 # use ssh instead of https
 git clone git@github.com:username/repo.git
 ```
-##### WSL SSH Pesistancy
-add to bashrc or zshrc
+##### SSH Pesistancy
+Note: there may be other ways to do this or it may be automatic.
+Use if experiencing issues.
+
+Add to `.zshrc`:
 ```
 # Start SSH agent if not running
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
   eval "$(ssh-agent -s)"
 fi
 
-ssh-add ~/.ssh/id_ed25519 2>/dev/null
+ssh-add ~/.ssh/id_ed25519 2>/dev/null  # or whatever the key file is..
+```
+You could also add to apple keychain on MacOS or systemd on Linux:
+```
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519  # MacOS
+
+systemctl --user enable --now ssh-agent         # Linux
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 ```
 
 #### Creating The `dotfiles` Directory
