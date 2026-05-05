@@ -20,7 +20,7 @@ Useful for GNU Stow / Git repo recursion
  - [echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim.git)
  - 
  - ~[bufferline](https://github.com/akinsho/bufferline.nvim.git)~
-     - ~[nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons.git)]~
+     - ~[nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons.git)~
 
 
 ## Handling Issues
@@ -32,7 +32,7 @@ To add a path:
 `lua vim.opt.runtimepath:append(',<path/to/lua>/lua')`
 
 #### Pressed Ctrl+z
-Pressing `<C-z>` will suspend nvim in the terminal. Enter the command: `fg` to retreive it.
+Pressing `<C-z>` will suspend nvim in the terminal. Enter the command: `fg` to return it to the `f`ore`g`round.
 
 
 ## Learning Vim-Motions
