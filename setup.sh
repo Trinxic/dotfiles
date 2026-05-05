@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ATTENTION: This is a script runner. Sources of scripts can be found below.
+# Please edit/add/remove scripts there. Don't tamper with this script unless it's broken!
+
 # --- Setup --- #
 # Text Colors
 RED="\033[0;31m"

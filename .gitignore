@@ -1,2 +1,4 @@
-.config/zsh/.histfile
+# child directories are responsible for their own .gitignore files if the
+# child directory itself is not completely ignored
 .local
+.DS_Store

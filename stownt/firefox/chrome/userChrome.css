@@ -1,7 +1,0 @@
-#PlacesToolbarItems {
-  display: flex !important;
-  justify-content: center !important;
-}
-  
-.titlebar-buttonbox-container{ display:none } /* Remove min/max/close buttons */ 
-.titlebar-spacer[type="post-tabs"]{ display:none } /* Remove spacer where buttons were */

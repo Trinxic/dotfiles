@@ -22,6 +22,7 @@ alias stow='stow --verbose'
 # ----------- zsh ---------- #
 alias srce='source ~/.zshrc'  # reload zsh configs
 alias editaliases='nvim ~/dotfiles/.config/zsh/configs/aliases.zsh'
+alias -g ,.='$_'  # copy last argument from previous command
 
 # ----------- git ---------- #
 alias ga='git add'

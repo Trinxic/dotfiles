@@ -33,7 +33,7 @@ keybind = cmd+t=new_tab
 keybind = cmd+w=close_surface
 
 # Theme
-theme = tokyonight
+theme = TokyoNight
 
 # Icon
 # blueprint, chalkboard, microchip, glass, holographic, paper, retro, xray or custom-style

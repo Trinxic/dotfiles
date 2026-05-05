@@ -1,17 +1,15 @@
 # [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
 ## Setup
-### Setting Up Git
+### Git
+#### Generating / Linking SSH
 ```
-# add user
-$ git config --global user.name "Trinxic"
-$ git config --global user.email "<email>"
-$ git config --list  # confirmation
-
 # generate ssh key
-ssh-keygen -t ed25519 -C "<email>"  # same as 'user.email'
+# NOTE: you can create different keys for different SSH connections
+# Ex. >> -t ed25519_github -C desktop-pc
+$ ssh-keygen -t ed25519_<role> -C <comment>
 
-# start ssh agent
+# start ssh agent (make sure to do this before adding ssh key / attempting to connect)
 $ eval "$(ssh-agent -s)"
 $ ssh-add ~/.ssh/id_ed25519
 
@@ -22,7 +20,7 @@ $ ssh -T git@github.com  # test connection
 # use ssh instead of https
 git clone git@github.com:username/repo.git
 ```
-#### WSL SSH Pesistancy
+##### WSL SSH Pesistancy
 add to bashrc or zshrc
 ```
 # Start SSH agent if not running
@@ -33,7 +31,7 @@ fi
 ssh-add ~/.ssh/id_ed25519 2>/dev/null
 ```
 
-### Creating The `dotfiles` Directory
+#### Creating The `dotfiles` Directory
 Since this repo includes other repos for things like zsh plugins, you must
 use the `--recurse-submodules` tag when cloning.
 ```
@@ -42,6 +40,15 @@ $ cd dotfiles  # move into the newly created directory
 ```
 If you have already cloned the repo, you can use: 
 `$ git submodule update --init --recursive`
+
+#### Pushing to github
+When in the root of the repo, you can use the following commands:
+```
+$ git add .                           # add all changes
+$ git reset HEAD <file or directory>  # remove staged ('unadd') changes
+$ git commit -C "<comment>"           # commit the changes and additionally add a comment
+$ git push                            # push the commit(s) to github
+```
 
 ### Sym-Linking Everything
 The following script will ensure that only OS-related dotfiles will be symlinked.
@@ -63,32 +70,39 @@ An alias has been set up to run a script which takes this into consideration: us
 See the exact alias [here](https://github.com/Trinxic/dotfiles/.config/zsh/configs/zsh-aliases).
 
 ## Installing Packages
-To list/install packages:
+Listing packages will yield results with <package> in the title. Downloading will only work if <package> is an exact match.
+To list/install/updating packages:
 ```
-# MacOS
-brew list <package>
-brew install <package>
-
-# Linux (Arch)
+# Linux (Archlinux)
 $ pacman -Ss <package>
 $ pacman -S <package>
+$ pacman -Syu  # all packages (for a specified package, it is the same as installing)
+
+# MacOS (this may be slightly inaccurate)
+brew list <package>
+brew install <package>
+brew upgrade <package>
+brew update && brew upgrade  # all packages
 ```
 
 ### Dependencies
 Make sure you have all the necessary dependencies:
 ```
 # Linux
+$ bat         # better-visualize 'cat'
 $ zsh         # shell
 $ fzf         # shell fuzzy finder
 $ zoxide      # improved 'cd'
 $ stow        # see above
-$ firefox     # ...
 $ fastfetch   # preview specs and OS icon
-$ sddm        # login manager (there's a different name for it)
+$ sddm or ly  # display manager (there's a different name for it)
 $ hypr(land)  # wayland version
-$ kitty       # terminal emulator
+$ ghostty       # terminal emulator
 $ wofi        # wayland version of rofi
 $ waybar      # status bar
+
+## 1-liner of essentials (Archlinux)
+sudo pacman -S zsh fzf zoxide stow fastfetch hyprland ghostty wofi
 
 # MacOS
 # The setup script will install brew & other apps automatically.
