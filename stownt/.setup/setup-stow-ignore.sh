@@ -45,11 +45,13 @@ HEADER="# --- Ignore Script --- #"
 if [[ ! -f "$OUTPUT_FILE" ]]; then
     echo -e "${GREEN}Creating $OUTPUT_FILE...${RESET}"
     touch "$OUTPUT_FILE"
+else
+    echo -e "${GREEN}Found $OUTPUT_FILE...${RESET}"
 fi
 
 # Delete everything from "$HEADER" onward if it exists
 if grep -q "$HEADER" "$OUTPUT_FILE"; then
-    if [[ "$os" == "linux" ]]; then
+    if [[ "$OS" == "linux" ]]; then
         sed -i -e "/$HEADER/,\$d" "$OUTPUT_FILE" # remove empty string arg on Linux
     else
         sed -i '' -e "/$HEADER/,\$d" "$OUTPUT_FILE" # keep it on MacOS

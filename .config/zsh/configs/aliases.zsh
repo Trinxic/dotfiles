@@ -59,7 +59,8 @@ alias ls='ls --color=auto'
 alias lsla='ls -la --color=auto'
 alias la='eza --long --time-style=relative --bytes --no-permissions --no-user --all --group-directories-first --icons=always'
 alias lap='eza --long -h --time-style=long-iso --total-size --all --group-directories-first --icons=always'
-alias tree='tree -C -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_Store"'
+alias tree='eza --tree --group-directories-first --icons=always -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_Store"'
+# alias tree='tree -C -I ".git|node_modules|__pycache__|.venv|.idea|.vscode|.DS_Store"'
 
 # ---------- misc ---------- #
 alias exti='exit'  # correct misspelling

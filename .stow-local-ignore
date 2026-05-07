@@ -1,20 +1,19 @@
 # --- Universal Ignores --- #
-^/\.local(/|$)
-^/\stownt(/|$)
-^/\.p10k.zsh$
-^/\READEVERYTHING.md$
-^/\README.md$
-^/\setup.sh$
-^/\TODO.md$
+\.local
+stownt
+\.p10k.zsh
+everything-README.md
+README.md$
+setup.sh$
 
 # these should be generally ignored by `stow` but just in case...
-^/\.gitconfig$
-^/\.gitignore$
-^/\.gitmodules$
-^/\.stow-local-ignore$
+\.git
+\.gitignore
+\.gitmodules
+\.stow-local-ignore
 
 # feel free to include mpd by commenting the following line:
-^/\.mpd(/|$)
+\.mpd
 
 
 # --- Ignore Script --- #
