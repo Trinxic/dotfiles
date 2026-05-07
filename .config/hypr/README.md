@@ -2,4 +2,4 @@
 The ASCII-text generator used in hypr-related files can be [here](https://patorjk.com/software/taag/).
 
 ## [hyprlock](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlock/)
-Most/All of the configs should be located in the `hyprlock.conf` file. Ones that are not used are commented out.
+Most/All of the hyprlock configs should be located in the `hyprlock.conf` file. Ones that are not used are commented out.

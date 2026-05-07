@@ -6,7 +6,7 @@
 # WALLPAPERS PATH
 DIR=$HOME/dotfiles/stownt/photos/wallpapers
 
-# Transition config (type swww img --help for more settings
+# Transition config (type awww img --help for more settings
 FPS=30
 TYPE="any"
 DURATION=3
@@ -15,8 +15,8 @@ DURATION=3
 WIDTH=20
 HEIGHT=30
 
-# swww command
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+# awww command
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # get list of wallpapers
 PICS=($(ls ${DIR} | grep -e ".jpg$" -e ".jpeg$" -e ".png$" -e ".gif$"))
@@ -59,7 +59,7 @@ menu() {
     printf "$RANDOM_PIC_NAME"
 }
 
-swww query || swww-daemon
+awww query || awww-daemon
 
 main() {
     choice=$(menu | ${wofi_command})
@@ -69,13 +69,13 @@ main() {
 
     # random choice case
     if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
-        swww img ${DIR}/${RANDOM_PIC} --outputs DP-1 $SWWW_PARAMS
-        swww img ${DIR}/${RANDOM_PIC} --outputs DP-2 $SWWW_PARAMS # --resize no
+        awww img ${DIR}/${RANDOM_PIC} --outputs DP-1 $AWWW_PARAMS
+        awww img ${DIR}/${RANDOM_PIC} --outputs DP-2 $AWWW_PARAMS # --resize no
         return
     fi
 
     pic_index=$(echo $choice | cut -d. -f1)
-    swww img ${DIR}/${PICS[$pic_index]} $SWWW_PARAMS
+    awww img ${DIR}/${PICS[$pic_index]} $AWWW_PARAMS
 }
 
 # Check if wofi is already running

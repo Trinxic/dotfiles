@@ -1,0 +1,26 @@
+--             __
+--   ______ __/ /__ ___
+--  / __/ // / / -_|_-<
+-- /_/  \_,_/_/\__/___/
+-- https://wiki.hyprland.org/Configuring/Window-Rules/
+-- https://wiki.hyprland.org/Configuring/Workspace-Rules/
+
+-- WARNING: Not sure if this works...
+
+-- [ ------ Window Rules ----- ]
+hl.window_rule({ match = { class = "discord" }, workspace = 9 })
+hl.window_rule({ match = { class = "Discord - Updater" }, workspace = 9 })
+
+-- [ ------ Layer Rules ------ ]
+-- ...
+
+-- [ ---- Workspace Rules ---- ]
+hl.workspace_rule({ workspace = "1", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-1" })
+
+hl.workspace_rule({ workspace = "6", monitor = "DP-2", layout_opts = { orientation = "top" } })
+hl.workspace_rule({ workspace = "7", monitor = "DP-2", layout_opts = { orientation = "top" } })
+hl.workspace_rule({ workspace = "8", monitor = "DP-2", layout_opts = { orientation = "top" } })
+hl.workspace_rule({ workspace = "9", monitor = "DP-2", layout_opts = { orientation = "top" }, default = true })
