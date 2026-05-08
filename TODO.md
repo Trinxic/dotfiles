@@ -15,3 +15,15 @@
 ## Leetcode
 ### remote solve problems
 Figure out how to remotely submit solutions in order to use nvim
+
+
+
+
+---------------------------------------
+*** hyprland lua doesn't take affect until next major update (0.55)...
+server bash stuff
+server startup stuff
+ly
+waybar..?
+prob other stuff
+archlinux logout thingy

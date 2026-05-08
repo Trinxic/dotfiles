@@ -5,6 +5,7 @@ stownt
 everything-README.md
 README.md$
 setup.sh$
+TODO.md
 
 # these should be generally ignored by `stow` but just in case...
 \.git
