@@ -1,3 +1,6 @@
+# Archived
+This repository has been archived and transfered to [codeberg](https://codeberg.org/trinxic/dotfiles).
+
 # [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
 ## Setup
