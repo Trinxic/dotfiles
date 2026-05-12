@@ -1,5 +1,11 @@
 # Archived
-This repository has been archived and transfered to [codeberg](https://codeberg.org/trinxic/dotfiles).
+This repository has been archived and will no longer receive updates. See latest dotfiles [here](https://codeberg.org/trinxic/dotfiles)
+
+Update remote:
+```
+git remote remove origin
+git remote add origin ssh://git@codeberg.org/trinxic/dotfiles.git
+```
 
 # [Trinxic](https://github.com/Trinxic) x [Dotfiles](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 
